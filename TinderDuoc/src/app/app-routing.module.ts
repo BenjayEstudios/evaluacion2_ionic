@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'mensajes',
     loadChildren: () => import('./mensajes/mensajes.module').then( m => m.MensajesPageModule)
   },
+  {
+    path: 'editar-perfil',
+    loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+  },
 
 ];
 
