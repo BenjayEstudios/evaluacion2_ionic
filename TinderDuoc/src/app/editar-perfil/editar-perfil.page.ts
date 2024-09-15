@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PhotoService } from '../services/photo.service';
 @Component({
   selector: 'app-editar-perfil',
   templateUrl: './editar-perfil.page.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarPerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(public photoService: PhotoService) { }
 
   ngOnInit() {
+  }
+
+  addPhotoToGallery(){
+    this.photoService.AgregarPhotoGaleria();
   }
 
 }
