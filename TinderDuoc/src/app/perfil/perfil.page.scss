@@ -1,5 +1,27 @@
-.container{
-    position: absolute;
-    left: 15px;
-    right: 15px;
-}
+.container {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .avatar {
+    margin: 0 auto;
+  }
+  
+  .profile-info {
+    margin: 16px 0;
+  }
+  
+  .profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .profile-info p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  ion-button {
+    margin: 8px 0;
+  }
+  

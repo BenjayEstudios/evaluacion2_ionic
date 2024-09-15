@@ -5,19 +5,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-avatar class="avatar">
+      <img alt="Fotografía de perfil" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>    
 
-<p>_bagp_</p>
-  
-<br>
-[Foto]
-<br>
-[Nombre]
-<br>
-[Descripcion]
-<br>
-Editar Perfil
-<br>
-compartir perfil
+    <div class="profile-info">
+      <h2>_bapg_</h2>
+      <h3>Benja</h3>
+      <p>Soy un informatico que le gusta jugar lol y fumar marihuana para finel medicinales</p>
+    </div>
+
+    <button (click)="EditarPerfil()" class="btn btn-duoc1">Editar Perfil</button>
+    <button (click)="CompartirPerfil()" class="btn btn-duoc1">Compartir Perfil</button>
+  </div>
 </ion-content>
 <!-- Aquí es donde colocas el menu-tabs -->
 <app-menu-tabs></app-menu-tabs>
