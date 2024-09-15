@@ -135,7 +135,22 @@ ion-toolbar{
     border:solid 1px var(--ion-color-duoc2);
     color: var(--ion-color-duoc2);    
 }
-
+.btn-like{
+	background-color: green;
+	border: solid 1px black;
+	border-radius: 0px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	color: black;
+}
+.btn-dislike{
+	background-color: red;
+	border: solid 1px black;
+	border-radius: 0px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	color: black;
+}
 // .full-card {
 // 	height: 85vh; /* 100% de la altura de la pantalla */
 // 	display: flex;
