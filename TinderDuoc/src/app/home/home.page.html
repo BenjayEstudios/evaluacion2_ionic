@@ -4,9 +4,10 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <app-menu-tabs></app-menu-tabs>
   <div class="container">
     <br>
-    <button class="btn btn-duoc1">
+    <button class="btn btn-duoc1" [routerLink]="['/filtrar-gente']">
       <ion-icon name="filter"></ion-icon>
       <ion-label>Filtrar Búsqueda</ion-label>
     </button>
@@ -28,6 +29,9 @@
     </ion-buttons>
     
   </div>
+  
 </ion-content>
 <!-- Aquí es donde colocas el menu-tabs -->
-<app-menu-tabs></app-menu-tabs>
+<!-- <ion-content> -->
+  
+<!-- </ion-content> -->
