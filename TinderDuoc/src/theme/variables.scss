@@ -136,3 +136,14 @@ ion-toolbar{
     color: var(--ion-color-duoc2);    
 }
 
+.full-card {
+	height: 85vh; /* 100% de la altura de la pantalla */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0;
+  }
+  ion-card-header,
+ion-card-content {
+  padding: 16px;
+}
