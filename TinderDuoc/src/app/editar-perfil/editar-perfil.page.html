@@ -1,13 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>editar-perfil</ion-title>
+    
+    <ion-title><ion-button [routerLink]="['/perfil']">Volver</ion-button></ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="addPhotoToGallery()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <div class="container">
+    <div class="profile-info">
+      <ion-avatar class="avatar">
+        <img alt="Fotografía de perfil" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        <ion-fab-button class="camera-edit" (click)="addPhotoToGallery()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-avatar>
+      <u class="usuario">_bapg_</u>
+      <p class="nombre">Benjamin Gonzalez</p>
+      <p class="edad">24 Años</p>
+      <p class="descripcion">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad. </p>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+
+    </ion-fab>
+
+  </div>
 </ion-content>
