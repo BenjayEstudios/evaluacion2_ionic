@@ -1,0 +1,138 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+	/*Obscuro casi negro*/
+	--ion-color-duoc0: #1a1a1a;
+	--ion-color-duoc0-rgb: 26,26,26;
+	--ion-color-duoc0-contrast: #ffffff;
+	--ion-color-duoc0-contrast-rgb: 255,255,255;
+	--ion-color-duoc0-shade: #171717;
+	--ion-color-duoc0-tint: #313131;
+	/*Amarillo*/
+	--ion-color-duoc1: #ffb800;
+	--ion-color-duoc1-rgb: 255,184,0;
+	--ion-color-duoc1-contrast: #000000;
+	--ion-color-duoc1-contrast-rgb: 0,0,0;
+	--ion-color-duoc1-shade: #e0a200;
+	--ion-color-duoc1-tint: #ffbf1a;
+	/*Celeste*/
+	--ion-color-duoc3: #307fe2;
+	--ion-color-duoc3-rgb: 48,127,226;
+	--ion-color-duoc3-contrast: #000000;
+	--ion-color-duoc3-contrast-rgb: 0,0,0;
+	--ion-color-duoc3-shade: #2a70c7;
+	--ion-color-duoc3-tint: #458ce5;
+	/*Gris*/
+	--ion-color-duoc2: #c2c2c2;
+	--ion-color-duoc2-rgb: 194,194,194;
+	--ion-color-duoc2-contrast: #000000;
+	--ion-color-duoc2-contrast-rgb: 0,0,0;
+	--ion-color-duoc2-shade: #ababab;
+	--ion-color-duoc2-tint: #c8c8c8;
+}
+*{
+	font-family: "Poppins", system-ui; 
+}
+ion-toolbar{
+    background-color: var(--ion-color-duoc0);
+}
+.titulo{
+    
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5em;
+	color: var(--ion-color-duoc1);
+}
+.sub-titulo{
+    
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9em;
+	color: var(--ion-color-duoc3-tint);
+}
+.link-simple a{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9em;
+	color: var(--ion-color-duoc2-tint);
+	text-decoration: none;
+}
+.link-simple{
+	margin-bottom: 15px;
+}
+/*--- Formato para inputs ---*/
+.input-field{
+    position: relative;
+	margin-top: 15px;
+}
+.input-field input{
+    width: 100%;
+    border-radius: 15px;
+    font-size: 1em;
+	
+	font-weight: 200;
+	padding: 15px 14px;
+	border: 2px solid var(--ion-color-duoc1-shade);
+	background: transparent;
+	color: var(--ion-color-duoc1-shade);
+	outline: none;
+}
+.input-field label{
+	position: absolute;
+	top:100%;
+	left: 15px;
+	transform: translateY(-40px);
+	
+	font-weight: 200;
+	color: var(--ion-color-duoc1-shade);
+	font-size: 1.10em;
+	pointer-events: none;
+	transition: .3s;
+}
+.input-field input:focus{
+	border: 2px solid var(--ion-color-duoc2-shade);
+}
+.input-field input:focus ~ label,
+.input-field input:valid ~ label{
+	top: 27px;
+	font-size: 1.05em;
+	font-weight: 300;
+	padding: 0 5px;
+	background: var(--ion-background-color);
+	color: var(--ion-color-duoc2);
+}
+.input-field input:valid{
+	border-color: var(--ion-color-duoc2-shade);
+}
+
+
+.btn{
+    width: 100%; 
+    padding: 15px;
+    border-radius: 15px;
+    
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.85em;
+    margin-bottom: 15px;
+}
+.btn-duoc1{
+    background-color: var(--ion-color-duoc1-shade);
+    color: var(--ion-color-duoc1-contrast);
+}
+.btn-outline-duoc1{
+    background-color: var(--ion-color-duoc1-contrast);
+    border:solid 1px var(--ion-color-duoc1);
+    color: var(--ion-color-duoc1);    
+}
+.btn-duoc2{
+    background-color: var(--ion-color-duoc2-shade);
+    color: var(--ion-color-duoc2-contrast);
+}
+.btn-outline-duoc2{
+    background-color: var(--ion-color-duoc2-contrast);
+    border:solid 1px var(--ion-color-duoc2);
+    color: var(--ion-color-duoc2);    
+}
+

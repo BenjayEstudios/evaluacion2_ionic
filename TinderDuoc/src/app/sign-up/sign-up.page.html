@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- Menu -->
+    <ion-buttons slot="start">
+      <ion-menu-button color="success" menu="menuPrincipal"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TinderDuoc</ion-title>
+    <ion-buttons slot="end" [routerLink]="['/sign-in']">
+      <ion-button class="sub-titulo">
+        <p>Iniciar sesion</p>
+        <ion-icon slot="end" name="person-add" ></ion-icon>
+      </ion-button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <h1 class="titulo">Crear cuenta</h1>
+    <p class="sub-titulo">¡Hola, crea tu cuenta para continuar!</p>
+    <div class="input-field">
+      <input type="text" required spellcheck="false">
+      <label>Nombre de usuario</label>
+    </div>
+    <div class="input-field">
+      <input type="text" required spellcheck="false">
+      <label>Correo electrónico</label>
+    </div>
+
+    <div class="input-field">
+      <input type="password" required spellcheck="false">
+      <label>Contraseña</label>
+    </div>
+    <div class="link-simple">
+      <!-- <a [routerLink]="['/forgot-pass']">¿Olvidaste tu contraseña?</a> -->
+    </div>
+    <button [routerLink]="['/sign-in']" class="btn btn-duoc1">Crear cuenta</button>
+    
+  </div>
+</ion-content> 
