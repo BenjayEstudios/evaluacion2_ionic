@@ -12,6 +12,8 @@ export class PerfilPage implements OnInit {
 
   ngOnInit() {
   }
+
+  
   EditarPerfil(){
     this.navCtrl.navigateRoot('/editar-perfil')
   }
