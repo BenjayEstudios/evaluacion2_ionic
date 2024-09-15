@@ -8,10 +8,11 @@
   }
   
   .profile-info {
-    margin: 16px 0;
+    margin: 0px 0;
+    margin-top: 10px;
   }
   
-  .profile-info h2 {
+  .profile-info h2, .profile-info u{
     margin: 0;
     font-size: 24px;
   }
@@ -24,4 +25,67 @@
   ion-button {
     margin: 8px 0;
   }
+  .profile-info .usuario{
+    font-weight: bold;
+    color: #d1971b;
+
+  }
+  .profile-info .nombre{
+    font-size: 1em;
+    color: #d1971b;
+  }
+  .profile-info .edad{
+    font-size: 1em;
+    color: #d1971b;
+    padding: 0;
+    margin: 0;
+  }
+  .profile-info .descripcion{
+    font-style: italic;
+    text-align: justify;
+    color: #3f320f96;
+    // padding-left: 10px;
+    padding-inline: 20%;
+    padding-top: 15%;
+    padding-bottom:15% ;
+  }
+  .btn{
+    font-size: 1.1em;
+    font-weight: 500;
+    font-style: italic;
+  }
   
+  .btn-maches{
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .container{
+    position: absolute;
+    top:60px;
+    bottom: 60px;
+    left: 15px;
+    right: 15px;
+  
+    
+    // height: 100px;
+  }
+  .container a{
+    text-align: center;
+  }
+  .btn-filtrarBusqueda{
+    margin-top:30px;
+    margin-bottom: 30px;
+  }
+  .full-card{
+    padding-block: 50px;
+    // background-color: red;
+  }
+  .btn-maches{
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    right: 15px;
+  }

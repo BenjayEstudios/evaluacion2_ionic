@@ -5,19 +5,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <app-menu-tabs></app-menu-tabs>
   <div class="container">
-    <ion-avatar class="avatar">
-      <img alt="Fotografía de perfil" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-    </ion-avatar>    
-
+  
     <div class="profile-info">
-      <h2>_bapg_</h2>
-      <h3>Benja</h3>
-      <p>Soy un informatico que le gustan los negros y fumar marihuana para finel medicinales</p>
+      <ion-avatar class="avatar">
+        <img alt="Fotografía de perfil" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <u class="usuario">_bapg_</u>
+      <p class="nombre">Benjamin Gonzalez</p>
+      <p class="edad">24 Años</p>
+      <p class="descripcion">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad. </p>
     </div>
-    <button (click)="EditarPerfil()" class="btn btn-duoc1">Editar Perfil</button>
-    <button (click)="CompartirPerfil()" class="btn btn-duoc1">Compartir Perfil</button>
-  </div>
+    <ion-buttons class="btn-maches"> 
+      <button (click)="EditarPerfil()" class="btn btn-duoc1">Editar Perfil</button>
+      <button (click)="CompartirPerfil()" class="btn btn-duoc1">Compartir Perfil</button>
+    </ion-buttons>
+  </div> 
 </ion-content>
 <!-- Aquí es donde colocas el menu-tabs -->
-<app-menu-tabs></app-menu-tabs>
+  
