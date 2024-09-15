@@ -5,12 +5,16 @@
       <ion-icon name="chatbubble"></ion-icon>Mensajes
     </ion-tab-button>
     <!-- Gente -->
-    <ion-tab-button tab="home">
+    <ion-tab-button tab="home" [routerLink]="['/home']">
       <ion-icon name="people-circle-outline"></ion-icon>Gente
     </ion-tab-button>
     <!-- Perfil -->
     <ion-tab-button tab="perfil" [routerLink]="['/perfil']">
       <ion-icon name="person-circle-outline"></ion-icon>Perfil
+    </ion-tab-button>
+    <!-- Cerrar Sesión -->
+    <ion-tab-button tab="exit" [routerLink]="['/sign-in']">
+      <ion-icon name="exit"></ion-icon>Cerrar sesión
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
