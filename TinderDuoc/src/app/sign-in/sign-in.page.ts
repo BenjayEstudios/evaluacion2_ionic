@@ -12,6 +12,7 @@ export class SignInPage implements OnInit {
   ngOnInit() {
   }
   IniciarSesion(){
+    // Crear autenticacion de datos - Seguridad
     this.navCtrl.navigateRoot('/home')
   }
 }
