@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "ID USUARIO": 1,
+            "USUARIO": "benjayweas",
+            "CORREO ELECTRONICO": "benjayweas@duocuc.cl",
+            "CONTRASENA": "ben"
+        },
+        {
+            "ID USUARIO": 2,
+            "USUARIO": "sebamax097",
+            "CORREO ELECTRONICO": "sebamax097@duocuc.cl",
+            "CONTRASENA": "seb"
+        },
+        {
+            "ID USUARIO": 3,
+            "USUARIO": "smyl",
+            "CORREO ELECTRONICO": "smyl@duocuc.cl",
+            "CONTRASENA": "smy"
+        },
+        {
+            "ID USUARIO": 4,
+            "USUARIO": "joaquinLavin",
+            "CORREO ELECTRONICO": "joaquinLavin@duocuc.cl",
+            "CONTRASENA": "joa"
+        },
+        {
+            "ID USUARIO": 5,
+            "USUARIO": "Borchs",
+            "CORREO ELECTRONICO": "Borchs@duocuc.cl",
+            "CONTRASENA": "Bor"
+        },
+        {
+            "ID USUARIO": 6,
+            "USUARIO": "ADMIN",
+            "CORREO ELECTRONICO": "ADMIN@duocuc.cl",
+            "CONTRASENA": "ADM"
+        },
+        {
+            "ID USUARIO": 7,
+            "USUARIO": "luv.fer",
+            "CORREO ELECTRONICO": "luv.fer@duocuc.cl",
+            "CONTRASENA": "luv"
+        },
+        {
+            "ID USUARIO": 8,
+            "USUARIO": "cmiilnda",
+            "CORREO ELECTRONICO": "cmiilnda@duocuc.cl",
+            "CONTRASENA": "cmi"
+        },
+        {
+            "ID USUARIO": 9,
+            "USUARIO": "pedro",
+            "CORREO ELECTRONICO": "pedro@duocuc.cl",
+            "CONTRASENA": "ped"
+        },
+        {
+            "ID USUARIO": 10,
+            "USUARIO": "jose",
+            "CORREO ELECTRONICO": "jose@duocuc.cl",
+            "CONTRASENA": "jos"
+        }
+    ]
+}
