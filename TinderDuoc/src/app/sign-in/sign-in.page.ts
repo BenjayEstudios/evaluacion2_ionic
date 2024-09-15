@@ -7,12 +7,22 @@ import { NavController } from '@ionic/angular';
 })
 export class SignInPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  usuario: string = '';
+  password: string = '';
+
+  constructor(public navCtrl: NavController) { }
 
   ngOnInit() {
   }
   IniciarSesion(){
-    // Crear autenticacion de datos - Seguridad
-    this.navCtrl.navigateRoot('/home')
+    console.log(this.usuario)
+    console.log(this.password)
+    if(this.usuario != 'ADMIN' || this.password != 'ADMIN'){
+      alert('USUARIO O CONTRASEÑA ERRONEAS')
+
+    }else{
+      this.navCtrl.navigateRoot(['/home'])
+
+    }
   }
 }

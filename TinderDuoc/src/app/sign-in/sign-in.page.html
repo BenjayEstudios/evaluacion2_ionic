@@ -14,11 +14,11 @@
     <h1 class="titulo">Iniciar sesión</h1>
     <p class="sub-titulo">¡Hola, inicia sesión para continuar</p>
     <div class="input-field">
-      <input type="text" required spellcheck="false">
+      <input [(ngModel)]="usuario" type="text" required spellcheck="false">
       <label>Usuario o Correo electrónico</label>
     </div>
     <div class="input-field">
-      <input type="password" required spellcheck="false">
+      <input [(ngModel)]="password" type="password" required spellcheck="false">
       <label>Contraseña</label>
     </div>
     <div class="link-simple">
