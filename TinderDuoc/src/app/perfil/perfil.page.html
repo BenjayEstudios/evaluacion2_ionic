@@ -13,13 +13,13 @@
         <img alt="Fotografía de perfil" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
       </ion-avatar>
       <u class="usuario">{{nombreUsuario}}</u>
-      <p class="nombre">Benjamin Gonzalez</p>
-      <p class="edad">24 Años</p>
-      <p class="descripcion">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad. </p>
+      <p class="nombre">{{nombre+' '+apellido}}</p>
+      <p class="edad">{{edad}}</p>
+      <p class="descripcion">{{descripcion}}</p>
     </div>
     <ion-buttons class="btn-maches"> 
-      <button (click)="EditarPerfil()" class="btn btn-duoc1">Editar Perfil</button>
-      <button (click)="CompartirPerfil()" class="btn btn-duoc1">Compartir Perfil</button>
+      <button (click)="EditarPerfil()" class="btn btn-duoc3">Editar Perfil</button>
+      <button (click)="CompartirPerfil()" class="btn btn-duoc3">Compartir Perfil</button>
     </ion-buttons>
   </div> 
 </ion-content>
