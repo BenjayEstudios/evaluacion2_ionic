@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'filtrar-gente',
     loadChildren: () => import('./filtrar-gente/filtrar-gente.module').then( m => m.FiltrarGentePageModule)
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
 
 ];
 

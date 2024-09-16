@@ -45,14 +45,15 @@
     text-align: justify;
     color: #3f320f96;
     // padding-left: 10px;
-    padding-inline: 20%;
-    padding-top: 15%;
-    padding-bottom:15% ;
+    padding-inline: 10%;
+    // padding-top: 15%;
+    padding-bottom:10%;
   }
   .btn{
     font-size: 1.1em;
     font-weight: 500;
     font-style: italic;
+    width: 100%;
   }
   
   .btn-maches{
@@ -88,4 +89,10 @@
     bottom: 0px;
     left: 15px;
     right: 15px;
+  }
+  .avatar{
+    // display: block;
+    // width: 75%;
+    width: 200px;
+    height: 200px;
   }

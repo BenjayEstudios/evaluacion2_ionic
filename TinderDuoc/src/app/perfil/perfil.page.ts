@@ -50,9 +50,8 @@ export class PerfilPage implements OnInit {
   EditarPerfil() {
     this.navCtrl.navigateRoot('/editar-perfil');
   }
-
-  CompartirPerfil() {
-    this.navCtrl.navigateRoot('/home');
+  CompartirPerfil(){
+    this.navCtrl.navigateRoot('/home')
   }
 
   cuentasDuoc() {

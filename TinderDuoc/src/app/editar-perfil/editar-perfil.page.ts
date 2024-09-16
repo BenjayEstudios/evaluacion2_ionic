@@ -9,7 +9,9 @@ export class EditarPerfilPage implements OnInit {
 
   constructor(public photoService: PhotoService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    
+    
   }
 
   addPhotoToGallery(){
