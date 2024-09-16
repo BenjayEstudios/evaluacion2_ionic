@@ -6,6 +6,15 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- Abrir camara para tomar fotos -->
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+      <ion-img [src]="photo.WebViewPath"></ion-img>
+    </ion-col>
+  </ion-row>
+
+<!-- Imagenes agregadas a la galeria -->
 <ion-content>
   <div class="container">
     <div class="profile-info">
@@ -43,3 +52,5 @@
 
   </div>
 </ion-content>
+
+<!-- Guardar fotos en el sistema de archivos -->
