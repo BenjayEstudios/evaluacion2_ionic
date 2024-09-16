@@ -104,8 +104,11 @@
 .imagen{
   border-radius: 100%;
   display: block;
-  background-color: red;
+  /* background-color: red; */
+  color: transparent;
   width: 200px;
   height: 200px;
   margin: auto;
+  margin-top: -25px;
+  line-height: normal;
 }
