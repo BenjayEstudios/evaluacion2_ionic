@@ -7,13 +7,9 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-
   constructor(private navCtrl: NavController) { }
-
-  ngOnInit() {
-  }
-
-  
+  // Funciones
+  ngOnInit() {}
   EditarPerfil(){
     this.navCtrl.navigateRoot('/editar-perfil')
   }
