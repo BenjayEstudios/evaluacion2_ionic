@@ -35,7 +35,11 @@ export class SignInPage implements OnInit {
     if (!cuentaValida) {
       alert('USUARIO O CONTRASEÑA ERRONEAS');
     } else {
+
+      localStorage.setItem('userID', cuentaValida['ID USUARIO']);
+      console.log(cuentaValida['ID USUARIO'])
       this.navCtrl.navigateRoot(['/home']);
+
     }
   }
   
