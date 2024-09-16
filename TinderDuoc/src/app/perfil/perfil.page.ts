@@ -13,6 +13,10 @@ export class PerfilPage implements OnInit {
 
   cuentas: any[] = [];
   nombreUsuario: string = '';
+nombre: string = '';
+apellido: string = '';
+descripcion:string = '';
+edad: string = '';
 
   constructor(
     private navCtrl: NavController,
@@ -39,11 +43,11 @@ export class PerfilPage implements OnInit {
       if (cuenta) {
         console.log("Usuario encontrado:", cuenta);
         this.nombreUsuario = cuenta['USUARIO'];
-      } else {
-        console.log("Usuario no encontrado.");
+        this.nombre = cuenta['NOMBRE']
+        this.apellido = cuenta['APELLIDO']
+        this.descripcion = cuenta['DESCRIPCION']
+        this.edad = cuenta['EDAD']
       }
-    } else {
-      console.log("No se encontró el ID del usuario en localStorage.");
     }
   }
 
