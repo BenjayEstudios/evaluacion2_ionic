@@ -151,6 +151,20 @@ ion-toolbar{
 	border-bottom-left-radius: 15px;
 	color: black;
 }
+
+
+.btn {
+    border: solid black 2px;
+    // margin: 1px;
+    // background-color: #dfa019;
+    // color: black;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra suave */
+    transition: box-shadow 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.btn:hover {
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada al hacer hover */
+}
 // .full-card {
 // 	height: 85vh; /* 100% de la altura de la pantalla */
 // 	display: flex;
