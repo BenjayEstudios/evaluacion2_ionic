@@ -86,7 +86,7 @@
   }
   .btn-maches{
     position: absolute;
-    bottom: 0px;
+    bottom: 25px;
     left: 15px;
     right: 15px;
   }
@@ -96,3 +96,11 @@
     width: 200px;
     height: 200px;
   }
+  .btn-duoc3 {
+    border: solid black 2px;
+    margin: 1px;
+    background-color: #dfa019;
+    color: black;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada al hacer hover */
+    transition: box-shadow 0.3s ease; /* Transición suave al pasar el mouse */
+}
