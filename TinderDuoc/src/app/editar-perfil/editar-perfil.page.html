@@ -1,30 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    
+
     <ion-title><ion-button [routerLink]="['/perfil']">Volver</ion-button></ion-title>
-    
+
   </ion-toolbar>
 </ion-header>
 
-<!-- Abrir camara para tomar fotos -->
-<ion-content>
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="addPhotoToGallery()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-</ion-content>
-
-
-
-<ion-grid>
-  <ion-row>
-    <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-      <ion-img [src]="photo.WebViewPath"></ion-img>
-    </ion-col>
-  </ion-row>
-
-<!-- Imagenes agregadas a la galeria -->
 <ion-content>
   <div class="container">
     <div class="profile-info">
@@ -34,24 +15,24 @@
           <ion-icon name="camera"></ion-icon>
         </ion-fab-button>
       </ion-avatar>
-      <!-- <u class="usuario">_bapg_</u> -->
+      <!-- <u class="usuario">bapg</u> -->
       <div class="input-field">
-        <input  type="text" required spellcheck="false" value="_bapg_">
+        <input  type="text" required spellcheck="false" value="bapg">
         <label>usuario</label>
       </div>
       <!-- <p class="nombre">Benjamin Gonzalez</p> -->
       <div class="input-field">
-        <input  type="text" required spellcheck="false" value="_bapg_">
+        <input  type="text" required spellcheck="false" value="bapg">
         <label>usuario</label>
       </div>
       <!-- <p class="edad">24 Años</p> -->
       <div class="input-field">
-        <input  type="text" required spellcheck="false" value="_bapg_">
+        <input  type="text" required spellcheck="false" value="bapg">
         <label>usuario</label>
       </div>
       <!-- <p class="descripcion">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad. </p> -->
       <div class="input-field">
-        <input  type="text" required spellcheck="false" value="_bapg_">
+        <input  type="text" required spellcheck="false" value="bapg">
         <label>usuario</label>
       </div>
     </div>
@@ -62,5 +43,3 @@
 
   </div>
 </ion-content>
-
-<!-- Guardar fotos en el sistema de archivos -->
