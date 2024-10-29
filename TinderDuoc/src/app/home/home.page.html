@@ -3,8 +3,10 @@
     <ion-title>Gente</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <app-menu-tabs></app-menu-tabs>
+
+<ion-content >
+  <app-menu-tabs ></app-menu-tabs>
+
   <div class="container" >
 
 
@@ -14,27 +16,37 @@
       <ion-label>Filtrar Búsqueda</ion-label>
     </button>
     
-    
-    <ion-card class="full-card">
-      <img alt="Foto de Matches" src="https://content.imageresizer.com/images/memes/grey-mario-meme-5.jpg" />
-      <ion-card-header>
-        <ion-card-title>Sebastian ramirez</ion-card-title>
-        <ion-card-subtitle>Ingenieria en Informatica</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        Hola, me caracterizo por ser cazatalentos
-      </ion-card-content>
-    </ion-card>
+    @for(item of items; track item.id){
 
 
-    <ion-buttons class="btn-maches">  
-      <button class="btn btn-dislike">No me gusta</button>
-      <button class="btn btn-like">Me gusta</button>
-    </ion-buttons>
-    
+      
+      <ion-card class="full-card" style="text-align: center;">
+        <img alt="Foto de Matches" src="{{item.imagen}}" />
+        <ion-card-header>
+          <ion-card-title>{{item.nombre}}</ion-card-title>
+          <ion-card-subtitle>{{item.carrera}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{item.descripcion}}
+        </ion-card-content>
+        <ion-buttons class="btn-maches">  
+          <button class="btn btn-dislike">No me gusta</button>
+          <button class="btn btn-like">Me gusta</button>
+        </ion-buttons>
+      </ion-card>
+
+  }
+
   </div>
+
+
+  
+
+ 
   
 </ion-content>
+
+
 <!-- Aquí es donde colocas el menu-tabs -->
 <!-- <ion-content> -->
   
