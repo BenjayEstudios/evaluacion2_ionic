@@ -7,7 +7,7 @@ import { ApiConsumoService } from '../services/api-consumo.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  items: any
+  datos: any
   dataStorage:any
   constructor(private apiService: ApiConsumoService) { }
 
@@ -18,15 +18,15 @@ export class HomePage implements OnInit {
 
     if(this.dataStorage){
       console.log('datos desde localstorage')
-      this.items=JSON.parse(this.dataStorage)
+      this.datos=JSON.parse(this.dataStorage)
 
     }else{
 
-      this.apiService.obtenerDatos().subscribe((Root) => {
+      this.apiService.obtenerDatos().subscribe((Info) => {
       console.log('datos desde API')
-        console.log(Root)
-        this.items = Root
-        localStorage.setItem('data',JSON.stringify(this.items))
+        console.log(Info)
+        this.datos = Info
+        localStorage.setItem('data',JSON.stringify(this.datos))
 
   
   

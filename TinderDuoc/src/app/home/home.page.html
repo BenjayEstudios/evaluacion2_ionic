@@ -16,18 +16,18 @@
       <ion-label>Filtrar Búsqueda</ion-label>
     </button>
     
-    @for(item of items; track item.id){
+    @for(data of datos; track data.id){
 
 
       
       <ion-card class="full-card" style="text-align: center;">
-        <img alt="Foto de Matches" src="{{item.imagen}}" />
+        <img alt="Foto de Matches" src="{{data.imagen}}" />
         <ion-card-header>
-          <ion-card-title>{{item.nombre}}</ion-card-title>
-          <ion-card-subtitle>{{item.carrera}}</ion-card-subtitle>
+          <ion-card-title>{{data.nombre}}</ion-card-title>
+          <ion-card-subtitle>{{data.carrera}}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-          {{item.descripcion}}
+          {{data.descripcion}}
         </ion-card-content>
         <ion-buttons class="btn-maches">  
           <button class="btn btn-dislike">No me gusta</button>
