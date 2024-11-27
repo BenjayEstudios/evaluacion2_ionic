@@ -18,34 +18,49 @@
 <ion-content>
   <div class="container">
     <div class="profile-info">
-      <ion-avatar class="imagen">
-        <ion-col size="1" *ngFor="let photo of photoService.photos; index as position">
-            <img class="imagen" alt="Fotografía de perfil" [src]="photo.WebViewPath" />
-        </ion-col>
 
-      </ion-avatar>
+     
+      <ion-grid>
+        <ion-row>
+              <ion-avatar class="imagen-avatar">
+
+              <ion-col class="div-imagen"  *ngIf="photoService.photos.length > 0">
+                <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos[0].WebViewPath" />
+              </ion-col>
+
+            </ion-avatar>
+            </ion-row>
+
+
+          </ion-grid>
+     
       <ion-fab-button class="camera-edit" (click)="addPhotoToGallery()">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
       <!-- <u class="usuario">bapg</u> -->
-      <div class="input-field">
-        <input type="text" required spellcheck="false" value="_bapg_">
-        <label>usuario</label>
-      </div>
-      <!-- <p class="nombre">Benjamin Gonzalez</p> -->
-      <div class="input-field">
-        <input type="text" required spellcheck="false" value="Benjamin Gonzalez">
-        <label>nombre</label>
-      </div>
-      <div class="input-field">
-        <input type="number" required spellcheck="false" value="24">
-        <label>edad</label>
-      </div>
-      <!-- <p class="descripcion">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad. </p> -->
-      <div class="input-field">
-        <!-- <textarea>Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad.</textarea> -->
-        <input type="text" required spellcheck="false" value="Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad.">
-        <label>descripcion</label>
+
+      <div class="container-input">
+
+        <div class="input-field">
+          <input type="text" required spellcheck="false" value="_bapg_">
+          <label>usuario</label>
+        </div>
+        <!-- <p class="nombre">Benjamin Gonzalez</p> -->
+        <div class="input-field">
+          <input type="text" required spellcheck="false" value="Benjamin Gonzalez">
+          <label>nombre</label>
+        </div>
+        <div class="input-field">
+          <input type="number" required spellcheck="false" value="24">
+          <label>edad</label>
+        </div>
+        <!-- <p class="descripcion">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad. </p> -->
+        <div class="input-field">
+          <!-- <textarea>Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad.</textarea> -->
+          <input type="text" required spellcheck="false"
+            value="Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad.">
+          <label>descripcion</label>
+        </div>
       </div>
     </div>
 

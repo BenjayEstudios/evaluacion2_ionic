@@ -5,7 +5,8 @@
 </ion-header>
 
 <ion-content color="light">
-  <app-menu-tabs></app-menu-tabs>
+  <app-menu-tabs style="position:sticky;z-index: 1000;" ></app-menu-tabs>
+
   <ion-list [inset]="true">
     <ion-item-sliding>
       <ion-item [button]="true" [routerLink]="['/chat']">
@@ -34,4 +35,5 @@
       </ion-item-options> -->
     </ion-item-sliding>
   </ion-list>
+  
 </ion-content>

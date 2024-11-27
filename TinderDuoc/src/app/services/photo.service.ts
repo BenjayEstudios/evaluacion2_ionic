@@ -78,26 +78,26 @@ export class PhotoService {
 
 }
   public async AgregarPhotoGaleria() {
-  // Toma una foto
-  const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri,
-    source: CameraSource.Camera,
-    quality: 100
-  });
+    // Toma una foto
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 200
+    });
 
-  const savedImageFile = await this.savePicture(capturedPhoto);
-  this.photos.unshift(savedImageFile);
+    const savedImageFile = await this.savePicture(capturedPhoto);
+    this.photos.unshift(savedImageFile);
 
-  this.photos.unshift({
-    filepath: "soon...",
-    WebViewPath: capturedPhoto.webPath!
+    this.photos.unshift({
+      filepath: "soon...",
+      WebViewPath: capturedPhoto.webPath!
 
-  });
+    });
 
-  Preferences.set({
-    key: this.PHOTO_STORAGE,
-    value: JSON.stringify(this.photos),
-  });
+    Preferences.set({
+      key: this.PHOTO_STORAGE,
+      value: JSON.stringify(this.photos),
+    });
 
 
 }

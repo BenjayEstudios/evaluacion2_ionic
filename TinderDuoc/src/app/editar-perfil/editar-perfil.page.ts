@@ -6,8 +6,9 @@ import { PhotoService } from '../services/photo.service';
   styleUrls: ['./editar-perfil.page.scss'],
 })
 export class EditarPerfilPage implements OnInit {
-
-  constructor(public photoService: PhotoService) { }
+  profilePhoto: string | undefined;
+  constructor(public photoService: PhotoService) {
+   }
 
   async ngOnInit() {
     

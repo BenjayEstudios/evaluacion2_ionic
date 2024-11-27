@@ -3,6 +3,7 @@ import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AppComponent } from '../app.component';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-perfil',
@@ -20,7 +21,8 @@ edad: string = '';
 
   constructor(
     private navCtrl: NavController,
-    private http: HttpClient
+    private http: HttpClient,
+    public photoService: PhotoService
   ) { }
 
   ngOnInit() {

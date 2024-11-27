@@ -90,25 +90,55 @@
     left: 15px;
     right: 15px;
   }
-  .avatar{
-    // display: block;
-    // width: 75%;
-    width: 200px;
-    height: 200px;
-  }
+
   ion-fab-button.md.ion-activatable.ion-focusable.hydrated {
     position: relative;
     top: -60px;
 }
 
-.imagen{
+
+
+.imagen-avatar{
   border-radius: 100%;
   display: block;
   background-color: rgba(0, 0, 0, 0.288);
   color: transparent;
-  width: 200px;
-  height: 200px;
+  width: 270px !important;
+  height: 250px !important;
   margin: auto;
   margin-top: -25px;
   line-height: normal;
+  text-align: center;
+  border: 0.5px solid rgb(32, 85, 110);
+
+  
+}
+
+.div-imagen{
+
+  right: 5px;
+  bottom: 1px;
+
+
+}
+
+
+.imagen{
+
+
+  height: 250px !important;
+  border-radius: 100%; /* También redondea la imagen */
+ 
+
+}
+
+
+
+.camera-edit{
+  margin-top: 30px !important;
+  margin: auto;
+}
+
+.container-input{
+  margin-top:-50px ;
 }
