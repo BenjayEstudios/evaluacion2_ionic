@@ -99,7 +99,7 @@
 
 
 .imagen-avatar{
-  border-radius: 100%;
+  border-radius: 100% !important;
   display: block;
   background-color: rgba(0, 0, 0, 0.288);
   color: transparent;
@@ -125,7 +125,8 @@
 
 .imagen{
 
-
+  object-fit: cover; /* Asegura que el SVG no se deforme */
+  width: 280px !important;
   height: 250px !important;
   border-radius: 100%; /* También redondea la imagen */
  

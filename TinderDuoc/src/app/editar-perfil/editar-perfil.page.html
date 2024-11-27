@@ -24,8 +24,8 @@
         <ion-row>
               <ion-avatar class="imagen-avatar">
 
-              <ion-col class="div-imagen"  *ngIf="photoService.photos.length > 0">
-                <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos[0].WebViewPath" />
+              <ion-col class="div-imagen"  >
+                <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos.length > 0 ? photoService.photos[0].WebViewPath : 'https://ionicframework.com/docs/img/demos/avatar.svg'"  />
               </ion-col>
 
             </ion-avatar>
