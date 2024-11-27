@@ -4,10 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <app-menu-tabs ></app-menu-tabs>
+<ion-content>
+  <app-menu-tabs></app-menu-tabs>
 
-  <div class="container" >
+  <div class="container">
 
 
 
@@ -15,39 +15,47 @@
       <ion-icon name="filter"></ion-icon>
       <ion-label>Filtrar Búsqueda</ion-label>
     </button>
-    
-    @for(data of datos; track data.id){
+
+    <swiper-container >
+      @for(data of datos; track data.id){
 
 
-      
-      <ion-card class="full-card" style="text-align: center;">
-        <img alt="Foto de Matches" src="{{data.imagen}}" />
-        <ion-card-header>
-          <ion-card-title>{{data.nombre}}</ion-card-title>
-          <ion-card-subtitle>{{data.carrera}}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          {{data.descripcion}}
-        </ion-card-content>
-        <ion-buttons class="btn-maches">  
-          <button class="btn btn-dislike">No me gusta</button>
-          <button class="btn btn-like">Me gusta</button>
-        </ion-buttons>
-      </ion-card>
+      <swiper-slide style="max-height: 500px;">
 
-  }
+
+        <ion-card class="full-card" style="text-align: center;">
+          <img alt="Foto de Matches" src="{{data.imagen}}" />
+          <ion-card-header>
+            <ion-card-title>{{data.nombre}}</ion-card-title>
+            <ion-card-subtitle>{{data.carrera}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{data.descripcion}}
+          </ion-card-content>
+          <ion-buttons class="btn-maches">
+            <button class="btn btn-dislike">No me gusta</button>
+            <button class="btn btn-like">Me gusta</button>
+          </ion-buttons>
+        </ion-card>
+      </swiper-slide>
+
+
+
+
+      }
+    </swiper-container>
 
   </div>
 
 
-  
 
- 
-  
+
+
+
 </ion-content>
 
 
 <!-- Aquí es donde colocas el menu-tabs -->
 <!-- <ion-content> -->
-  
+
 <!-- </ion-content> -->

@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TestModule } from '../test/test.module';  // Importa TestModule aquí
 import { ApiConsumoService } from '../services/api-consumo.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ApiConsumoService } from '../services/api-consumo.service';
     HomePageRoutingModule,
     TestModule  // Importa TestModule para usar MenuTabsComponent
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   providers:[ApiConsumoService],
   declarations: [HomePage]
 })

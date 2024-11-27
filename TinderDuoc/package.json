@@ -29,11 +29,12 @@
     "@capacitor/keyboard": "6.0.2",
     "@capacitor/preferences": "^6.0.2",
     "@capacitor/status-bar": "6.0.1",
-    "@ionic/angular": "^8.0.0",
+    "@ionic/angular": "^8.4.1",
     "@ionic/pwa-elements": "^3.3.0",
     "cordova-plugin-advanced-http": "^3.3.1",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
+    "swiper": "^11.1.15",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },
@@ -52,6 +53,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "css-loader": "^7.1.2",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.1",
@@ -63,6 +65,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "style-loader": "^4.0.0",
     "typescript": "~5.4.0"
   },
   "description": "An Ionic project"
