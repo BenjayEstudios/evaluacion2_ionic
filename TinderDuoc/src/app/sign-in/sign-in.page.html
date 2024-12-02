@@ -1,18 +1,6 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>TinderDuoc</ion-title>
-    <ion-buttons slot="end" [routerLink]="['/sign-up']"> 
-      <ion-button class="sub-titulo">
-        <p>Crea una cuenta</p>
-        <ion-icon slot="end" name="person-add" ></ion-icon>
-      </ion-button> 
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
   <div class="container">
-    <h1 class="titulo">Iniciar sesión</h1>
-    <p class="sub-titulo">¡Hola, inicia sesión para continuar</p>
+    <h1 class="login">Inicio Sesión</h1>
     <div class="input-field">
       <input [(ngModel)]="usuario" type="text" required spellcheck="false">
       <label>Usuario o Correo electrónico</label>
@@ -25,7 +13,13 @@
       <a [routerLink]="['/forgotten-pswd']">¿Olvidaste tu contraseña?</a>
     </div>
     
-    <button (click)="IniciarSesion()" class="btn btn-duoc1">Iniciar sesión</button>
+    <button (click)="IniciarSesion()" class="btn btn-duoc3">Iniciar sesión</button>
     
+    <div class="link-simple sin-cuenta">
+      No tienes una cuenta?
+      <a [routerLink]="['/sign-up']">Crear Cuenta</a>
+    </div>
+  
+  
   </div>
 </ion-content>

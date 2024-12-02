@@ -35,3 +35,18 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+// ion-content {
+//     --background: #112b53; /* Reemplaza con el color que quieras */
+// }
+ion-content {
+    --background: rgba(0, 0, 0, 0.8);
+    background: url('https://extensionduoc.s3.us-west-2.amazonaws.com/wp-content/uploads/2023/05/10182336/header-sede-plaza-oeste.png'); /* Reemplaza con el color que quieras */;
+    background-size: auto 100%;
+    background-position: center;
+    
+}
+:host-context(.dark) ion-content {
+    --background: #1e1e1e; /* Fondo oscuro */
+}

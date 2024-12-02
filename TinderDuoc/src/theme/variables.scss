@@ -21,7 +21,7 @@
 	--ion-color-duoc3-rgb: 48,127,226;
 	--ion-color-duoc3-contrast: #000000;
 	--ion-color-duoc3-contrast-rgb: 0,0,0;
-	--ion-color-duoc3-shade: #2a70c7;
+	--ion-color-duoc3-shade: #0d3877;
 	--ion-color-duoc3-tint: #458ce5;
 	/*Gris*/
 	--ion-color-duoc2: #c2c2c2;
@@ -73,9 +73,10 @@ ion-toolbar{
 	
 	font-weight: 200;
 	padding: 15px 14px;
-	border: 2px solid var(--ion-color-duoc1-shade);
+	// border: 2px solid var(--ion-color-duoc1);
+	border: 2px solid var(--ion-color-duoc2);
 	background: transparent;
-	color: var(--ion-color-duoc1-shade);
+	color: var(--ion-color-duoc2);
 	outline: none;
 }
 .input-field label{
@@ -85,13 +86,13 @@ ion-toolbar{
 	transform: translateY(-40px);
 	
 	font-weight: 200;
-	color: var(--ion-color-duoc1-shade);
+	color: var(--ion-color-duoc2-shade);
 	font-size: 1.10em;
 	pointer-events: none;
 	transition: .3s;
 }
 .input-field input:focus{
-	border: 2px solid var(--ion-color-duoc2-shade);
+	border: 2px solid var(--ion-color-duoc1-shade);
 }
 .input-field input:focus ~ label,
 .input-field input:valid ~ label{
@@ -99,8 +100,10 @@ ion-toolbar{
 	font-size: 1.05em;
 	font-weight: 300;
 	padding: 0 5px;
-	background: var(--ion-background-color);
-	color: var(--ion-color-duoc2);
+	background: var(--ion-color-duoc1-shade);
+	// background: transparent;
+	color: black;
+	border-radius: 25px;
 }
 .input-field input:valid{
 	border-color: var(--ion-color-duoc2-shade);
@@ -134,6 +137,16 @@ ion-toolbar{
     background-color: transparent;
     border:solid 1px var(--ion-color-duoc2);
     color: var(--ion-color-duoc2);    
+}
+.btn-duoc3{
+    background-color: var(--ion-color-duoc3-shade);
+    color: white;
+	font-size: 15px;
+}
+.btn-outline-duoc3{
+    background-color: transparent;
+    border:solid 1px var(--ion-color-duoc3);
+    color: var(--ion-color-duoc3);    
 }
 .btn-like{
 	background-color: green;
