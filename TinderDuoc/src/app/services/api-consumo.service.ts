@@ -1,17 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import {Root} from 'src/app/interfaces/api.interface';
 
-export type Root = Root2[]
-
-export interface Root2 {
-  id: number
-  nombre: string
-  usuario: string
-  descripcion: string
-  carrera: string
-  imagen: string
-}
 
 
 
