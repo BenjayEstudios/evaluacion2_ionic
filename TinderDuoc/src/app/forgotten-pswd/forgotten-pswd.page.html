@@ -1,15 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title><ion-button [routerLink]="['/sign-in']">Volver</ion-button></ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-content>
   <div class="container">
-    <p class="titulo">Olvidaste tu contraseña?</p>
-    <form action="">
-      <input type="text" name="usuario" id="usuario" placeholder="Usuario">
-    </form>
+    <p class="login">Recupera tu cuenta</p>
+    <p class="sub-texto">Ingresa tu Usuario o Correo electrónico para buscar tu cuenta.</p>
+    <div class="input-field">
+      <input type="text" required spellcheck="false">
+      <label>Usuario o Correo electrónico</label>
+    </div>
+    <div class="buttons-groups">
+      <button [routerLink]="['/sign-in']" class="btn btn-duoc1">Cancelar</button>
+      <button  class="btn btn-duoc3">Buscar</button>
+    </div>
   </div>
   
 </ion-content>
+
+
+<!-- <ion-content>
+  <div class="container">
+
+    <button (click)="IniciarSesion()" class="btn btn-duoc3">Iniciar sesión</button>
+    <div class="link-simple sin-cuenta">
+      No tienes una cuenta?
+      <a [routerLink]="['/sign-up']">Registrate</a>
+    </div>
+  </div>
+</ion-content> -->
+
