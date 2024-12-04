@@ -1,19 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-content>
   <app-menu-tabs></app-menu-tabs>
   <div class="container">
-  
     <div class="profile-info">
       <ion-avatar class="avatar">
         <ion-col class="div-imagen"  >
           <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos.length > 0 ? photoService.photos[0].WebViewPath : 'https://ionicframework.com/docs/img/demos/avatar.svg'"  />
         </ion-col>
-
       </ion-avatar>
       <u class="usuario">{{nombreUsuario}}</u>
       <p class="nombre">{{nombre+' '+apellido}}</p>
@@ -21,8 +13,8 @@
       <p class="descripcion">{{descripcion}}</p>
     </div>
     <ion-buttons class="btn-maches"> 
-      <button (click)="EditarPerfil()" class="btn btn-duoc3">Editar Perfil</button>
-      <button (click)="CompartirPerfil()" class="btn btn-duoc3">Compartir Perfil</button>
+      <button (click)="EditarPerfil()" class="btn btn-duoc1">Editar Perfil</button>
+      <button (click)="CompartirPerfil()" class="btn btn-duoc1">Compartir Perfil</button>
     </ion-buttons>
   </div> 
 </ion-content>

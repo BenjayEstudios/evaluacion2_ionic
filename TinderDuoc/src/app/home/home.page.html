@@ -1,10 +1,10 @@
-<ion-content>
+<ion-content [scrollY]="false">
   <app-menu-tabs></app-menu-tabs>
 
   <div class="container">
 
 
-    <button (click)="Filtrar()" class="btn-filtrarBusqueda btn btn-duoc3"><ion-icon name="filter"></ion-icon>Filtrar Búsqueda</button>
+    <button (click)="Filtrar()" class="btn-filtrarBusqueda btn btn-duoc3"><ion-icon name="filter"></ion-icon> Filtrar Búsqueda</button>
 
 
     <swiper-container class="cards-personas">
@@ -14,15 +14,16 @@
           <img alt="Foto de Matches" class="imagen-persona" src="{{data.imagen}}" />
           
           <ion-card-header>
-            <ion-card-title>{{data.nombre}}</ion-card-title>
-            <ion-card-subtitle>{{data.carrera}}</ion-card-subtitle>
+            
+            <ion-card-subtitle class="carrera-persona">{{data.carrera}}</ion-card-subtitle>
+            <ion-card-title class="name-persona">{{data.nombre}}</ion-card-title>
           </ion-card-header>
-          <ion-card-content>
+          <ion-card-content class="descripcion-persona">
             {{data.descripcion}}
           </ion-card-content>
           <ion-buttons class="btn-maches">
-            <button class="btn btn-dislike">No me gusta</button>
-            <button class="btn btn-like">Me gusta</button>
+            <button class="btn btn-dislike"><ion-icon name="heart-dislike-outline"></ion-icon></button>
+            <button class="btn btn-like"><ion-icon name="heart-outline"></ion-icon></button>
           </ion-buttons>
         </ion-card>
       </swiper-slide>

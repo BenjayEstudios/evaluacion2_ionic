@@ -1,39 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-
-    <ion-title><ion-button [routerLink]="['/perfil']">Volver</ion-button></ion-title>
-
-  </ion-toolbar>
-</ion-header>
-
-<!-- Abrir camara para tomar fotos -->
-<!-- <ion-grid>
-  <ion-row>
-    <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-      <ion-img [src]="photo.WebViewPath"></ion-img>
-    </ion-col>
-  </ion-row> -->
-
 <!-- Imagenes agregadas a la galeria -->
 <ion-content>
   <div class="container">
     <div class="profile-info">
-
-     
       <ion-grid>
         <ion-row>
-              <ion-avatar class="imagen-avatar">
-
-              <ion-col class="div-imagen"  >
-                <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos.length > 0 ? photoService.photos[0].WebViewPath : 'https://ionicframework.com/docs/img/demos/avatar.svg'"  />
-              </ion-col>
-
-            </ion-avatar>
-            </ion-row>
-
-
-          </ion-grid>
-     
+          <ion-avatar class="imagen-avatar">
+            <ion-col class="div-imagen">
+              <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos.length > 0 ? photoService.photos[0].WebViewPath : 'https://ionicframework.com/docs/img/demos/avatar.svg'"  />
+            </ion-col>
+          </ion-avatar>
+        </ion-row>
+      </ion-grid>
       <ion-fab-button class="camera-edit" (click)="addPhotoToGallery()">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
@@ -56,10 +33,15 @@
         </div>
         <!-- <p class="descripcion">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad. </p> -->
         <div class="input-field">
-          <!-- <textarea>Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad.</textarea> -->
-          <input type="text" required spellcheck="false"
-            value="Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad.">
+          <textarea required spellcheck="false" rows="6">Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad.</textarea>
+          <!-- <input type="text" required spellcheck="false"
+            value="Hola mi nombre es benjamin soy un estudiante de el instituto duoc uc que esta cursando la carrera de ingenieria en informatica. Voy ya en mi segundo año y estoy interesado por la ciberseguridad."> -->
           <label>descripcion</label>
+        </div>
+
+        <div class="buttons-groups">
+          <button [routerLink]="['/perfil']" class="btn btn-duoc1">Salir</button>
+          <button  class="btn btn-duoc3">Guardar</button>
         </div>
       </div>
     </div>

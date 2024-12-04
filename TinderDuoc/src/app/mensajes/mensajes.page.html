@@ -1,11 +1,11 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Mensajes</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content color="light">
-  <app-menu-tabs style="position:sticky;z-index: 1000;" ></app-menu-tabs>
+<ion-content color="light" class="container">
+  <app-menu-tabs></app-menu-tabs>
 
   <ion-list [inset]="true">
     <ion-item-sliding>
@@ -21,18 +21,6 @@
           </ion-note>
         </ion-label>
       </ion-item>
-
-      <!-- <ion-item-options slot="end">
-        <ion-item-option color="warning">
-          <ion-icon slot="icon-only" name="pin"></ion-icon>
-        </ion-item-option>
-        <ion-item-option color="tertiary">
-          <ion-icon slot="icon-only" name="share"></ion-icon>
-        </ion-item-option>
-        <ion-item-option color="danger" expandable="true">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options> -->
     </ion-item-sliding>
   </ion-list>
   
