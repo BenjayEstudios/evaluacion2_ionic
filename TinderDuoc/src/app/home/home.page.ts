@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiConsumoService } from '../services/api-consumo.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import { ApiConsumoService } from '../services/api-consumo.service';
 export class HomePage implements OnInit {
   datos: any
   dataStorage:any
-  constructor(private apiService: ApiConsumoService) { }
+  constructor(private apiService: ApiConsumoService,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
 
@@ -37,7 +39,9 @@ export class HomePage implements OnInit {
     
 
   }
-
+  Filtrar() {
+    this.navCtrl.navigateRoot('/editar-perfil');
+  }
 
 
 }
