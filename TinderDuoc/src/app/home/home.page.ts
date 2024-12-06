@@ -33,11 +33,7 @@ export class HomePage implements OnInit {
   
   
       })
-
-
     }
-    
-
   }
   Filtrar() {
     this.navCtrl.navigateRoot('/editar-perfil');

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { AppComponent } from '../app.component';
 import { PhotoService } from '../services/photo.service';
 
 @Component({
