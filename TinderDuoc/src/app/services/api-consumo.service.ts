@@ -11,11 +11,14 @@ import {Root} from 'src/app/interfaces/api.interface';
   providedIn: 'root'
 })
 export class ApiConsumoService {
-  private url='https://apimocha.com/duocker/post'
+
+  ApiConsumoURL:string = 'https://apimocha.com/duocker/post';
+
+  // private url='https://apimocha.com/duocker/post'
 
   constructor(private http:HttpClient) { }
 
   obtenerDatos():Observable<Root>{
-    return this.http.get<Root>(this.url)
+    return this.http.get<Root>(this.ApiConsumoURL)
   }
 }
