@@ -11,7 +11,13 @@ describe('EditarPerfilPage', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Confirma que se cree el DOM', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Confirma que se ejecute la funcion', () => {
+    component.addPhotoToGallery();
+
+    expect()
+  })
 });

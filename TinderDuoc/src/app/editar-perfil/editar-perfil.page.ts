@@ -16,6 +16,7 @@ export class EditarPerfilPage implements OnInit {
   }
 
   addPhotoToGallery(){
+    console.log("Funciona")
     this.photoService.AgregarPhotoGaleria();
   }
 
