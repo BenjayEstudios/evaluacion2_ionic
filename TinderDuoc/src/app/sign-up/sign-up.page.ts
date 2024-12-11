@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
@@ -21,6 +21,7 @@ export class SignUpPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
+    private toastController: ToastController,
     private http: HttpClient,
     private userService: UserService) {
     this.formReg = new FormGroup({
@@ -53,7 +54,7 @@ export class SignUpPage implements OnInit {
 
     /////////       SE VALIDA SI EL USUARIO EXISTE          /////////
     else if (!this.correoElectronico.endsWith('@duocuc.cl')) {
-      alert('Correo incorrecto, debe terminar en duocuc.cl');
+      this.alertaDominioInvalido();
       return;
 
     }else if (cuentaValida) {
@@ -68,19 +69,48 @@ export class SignUpPage implements OnInit {
       this.userService.register({ email, password })
         .then(response => {
           console.log(response)
-        this.navCtrl.navigateRoot(['/home']);
+        this.navCtrl.navigateRoot(['/sign-in']);
 
         })
         .catch(error => console.log(error));
     }
   }
 
+async alertaDominioInvalido(){
+  const toast=await this.toastController.create({
+    message:'Correo debe pertenecer a DUOC',
+    duration:1500,
+    position:'top'
+
+  })
+  await toast.present();
+}
+
+// async alertaRegistroExitoso(){
+//   const toast=await this.toastController.create({
+//     header: 'Registro Exitoso',
+//     message:'Registrado con exito!',
+//     buttons: [
+//       {
+//         text: 'Aceptar',
+//         handler: () => {
+//           // Navegar a la página de inicio de sesión al aceptar la alerta
+//           this.navCtrl.navigateRoot(['/sign-in']);
+//         }
+//       }
+//     ]
+
+//   })
+//   await toast.present();
+// }
+
+
 
 
   crearCuenta() {
     
 
-    console.log('FUNCIONA')
+    console.log('Button crear cuenta')
     //this.navCtrl.navigateRoot('/home')
   }
 

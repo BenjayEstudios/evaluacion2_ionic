@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu-tabs',
@@ -7,8 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuTabsComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private navCtrl: NavController
+
+  ) { }
 
   ngOnInit() {}
+
+
+  onClick(){
+    this.userService.logout()
+    .then(()=>{
+      console.log('onclick cerrar sesion')
+      this.navCtrl.navigateRoot(['/sign-in']);
+    })
+    .catch(error=>console.log(error))
+  }
+
+  goHome(){
+    this.navCtrl.navigateRoot(['/home']);
+
+  }
 
 }

@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { canActivate,redirectUnauthorizedTo} from '@angular/fire/auth-guard';
+
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'sign-in',
+    redirectTo: '/sign-in',
     pathMatch: 'full'
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    ...canActivate(()=>redirectUnauthorizedTo(['/sign-in']))
+  }, 
   {
     path: 'sign-in',
-    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
+    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule),
+    
   },
   {
     path: 'forgotten-pswd',
@@ -22,7 +26,8 @@ const routes: Routes = [
   {
     path: 'sign-up',
     loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },

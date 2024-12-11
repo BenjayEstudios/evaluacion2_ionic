@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { FormControl, FormGroup } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -11,14 +13,59 @@ import { map } from 'rxjs/operators';
 })
 export class SignInPage implements OnInit {
 
-  usuario: string = '';
+  formLogin: FormGroup;
+  usuarioEmail: string = '';
   password: string = '';
   cuentas: any[] = [];
 
   constructor(
-    public navCtrl: NavController,
-    public http: HttpClient) {}
+    private userService: UserService,
+    private navCtrl: NavController,
+    private http: HttpClient,
+    private toastController: ToastController) {
+
+      this.formLogin=new FormGroup({
+        email: new FormControl(),
+        password: new FormControl()
+      })
+    }
+
+ 
+
+
+    onSubmit(){
+
+      console.log(this.formLogin.value); 
+        this.userService.login(this.formLogin.value)
+        .then(response =>{
+          this.navCtrl.navigateRoot(['/home'])
+          console.log(response)
+          console.log('FUNCIONA')
+        })
+        .catch(error=>console.log(error)
+      );
+    }
+
+
+
   
+
+  
+  // IniciarSesion(){
+  //   const cuentaValida = this.cuentas.find(cuenta =>
+  //     cuenta['USUARIO'] === this.usuarioEmail && cuenta['CONTRASENA'] === this.password
+  //   );
+
+  //   if (!cuentaValida) {
+  //     alert('USUARIO O CONTRASEÑA ERRONEAS');
+  //   } else {
+
+  //     localStorage.setItem('userID', cuentaValida['ID USUARIO']);
+  //     console.log(cuentaValida['ID USUARIO'])
+  //     this.navCtrl.navigateRoot(['/home']);
+
+  //   }
+  // }
 
   ngOnInit() {
     this.cuentasDuoc().subscribe(res => {
@@ -27,23 +74,7 @@ export class SignInPage implements OnInit {
     });
 
   }
-  IniciarSesion(){
-    const cuentaValida = this.cuentas.find(cuenta =>
-      cuenta['USUARIO'] === this.usuario && cuenta['CONTRASENA'] === this.password
-    );
-
-    if (!cuentaValida) {
-      alert('USUARIO O CONTRASEÑA ERRONEAS');
-    } else {
-
-      localStorage.setItem('userID', cuentaValida['ID USUARIO']);
-      console.log(cuentaValida['ID USUARIO'])
-      this.navCtrl.navigateRoot(['/home']);
-
-    }
-  }
   
-
   cuentasDuoc(){
 
     return this.http
