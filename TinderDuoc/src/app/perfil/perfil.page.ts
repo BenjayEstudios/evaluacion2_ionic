@@ -3,6 +3,8 @@ import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { PhotoService } from '../services/photo.service';
+import { UserService } from '../services/user.service';
+import { Auth, getAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-perfil',
@@ -12,26 +14,31 @@ import { PhotoService } from '../services/photo.service';
 export class PerfilPage implements OnInit {
 
   cuentas: any[] = [];
+  user: string | null | undefined;
+
   nombreUsuario: string = '';
-nombre: string = '';
-apellido: string = '';
-descripcion:string = '';
-edad: string = '';
+  nombre: string = '';
+  apellido: string = '';
+  descripcion: string = '';
+  edad: string = '';
 
   constructor(
     private navCtrl: NavController,
     private http: HttpClient,
-    public photoService: PhotoService
+    public photoService: PhotoService,
   ) { }
 
   ngOnInit() {
-    
+
+    const user = getAuth().currentUser
+    this.user = user?.displayName
+
     this.cuentasDuoc().subscribe(res => {
       this.cuentas = res.data;
       console.log("Cuentas cargadas:", this.cuentas);
       this.traerNombre();
     });
-    
+
   }
 
   traerNombre() {
@@ -55,7 +62,7 @@ edad: string = '';
   EditarPerfil() {
     this.navCtrl.navigateRoot('/editar-perfil');
   }
-  CompartirPerfil(){
+  CompartirPerfil() {
     this.navCtrl.navigateRoot('/home')
   }
 
@@ -70,5 +77,5 @@ edad: string = '';
       );
   }
 
-  
+
 }

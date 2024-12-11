@@ -3,10 +3,13 @@
 
   <div class="container">
 
+   <div *ngIf="user">
+    <p>Bienvenido, tu correo es: <strong>{{ user }}</strong></p>
+   </div>
 
-    <button (click)="Filtrar()" class="btn-filtrarBusqueda btn btn-duoc3"><ion-icon name="filter"></ion-icon> Filtrar Búsqueda</button>
+    <!-- <button (click)="Filtrar()" class="btn-filtrarBusqueda btn btn-duoc3"><ion-icon name="filter"></ion-icon> Filtrar Búsqueda</button> -->
 
-
+   
     <swiper-container class="cards-personas">
       @for(data of datos; track data.id){
       <swiper-slide class="slide">
@@ -33,7 +36,7 @@
 
       }
     </swiper-container>
-
+    
   </div>
 
 

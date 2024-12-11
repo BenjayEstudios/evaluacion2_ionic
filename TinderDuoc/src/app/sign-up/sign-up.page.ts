@@ -4,6 +4,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { updateProfile } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-sign-up',
@@ -64,15 +65,29 @@ export class SignUpPage implements OnInit {
     
     
     else {
-
+      //EMAIL Y CONTRASEÑA ENVIADOS COMO OBJETO AL SERVICIO DE REGISTRO
       const { email, password } = this.formReg.value;
       this.userService.register({ email, password })
         .then(response => {
           console.log(response)
+
+        const user= response.user
+        updateProfile(user,{
+          displayName: this.usuario
+        })
+        .then(()=>{
+          console.log("USUARIO ha sido agregado como",this.usuario)
+        })
+        .catch((error)=>{
+          console.log("error al agregar usuario")
+
+        })
+
+
         this.navCtrl.navigateRoot(['/sign-in']);
 
         })
-        .catch(error => console.log(error));
+        .catch(error => {console.log(error)});
     }
   }
 

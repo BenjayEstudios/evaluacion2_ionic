@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -19,10 +19,11 @@ export class SignInPage implements OnInit {
   cuentas: any[] = [];
 
   constructor(
+    private alertController: AlertController,
     private userService: UserService,
     private navCtrl: NavController,
     private http: HttpClient,
-    private toastController: ToastController) {
+    ) {
 
       this.formLogin=new FormGroup({
         email: new FormControl(),
@@ -42,7 +43,19 @@ export class SignInPage implements OnInit {
           console.log(response)
           console.log('FUNCIONA')
         })
-        .catch(error=>console.log(error)
+        .catch(async error => {
+          console.log(error);
+    
+          
+          const alert = await this.alertController.create({
+            header: 'Error',
+            message: 'Usuario o contraseña incorrectos. ',
+            buttons: ['Aceptar'],
+            cssClass: 'custom-alert-message'
+          });
+    
+          await alert.present();
+        }
       );
     }
 

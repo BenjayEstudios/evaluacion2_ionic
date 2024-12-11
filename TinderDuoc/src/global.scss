@@ -50,3 +50,8 @@ ion-content {
 :host-context(.dark) ion-content {
     --background: #1e1e1e; /* Fondo oscuro */
 }
+
+.custom-alert-message {
+    text-align: center;
+  }
+ 

@@ -19,7 +19,7 @@ export class MenuTabsComponent  implements OnInit {
   ngOnInit() {}
 
 
-  onClick(){
+  goExit(){
     this.userService.logout()
     .then(()=>{
       console.log('onclick cerrar sesion')
@@ -31,6 +31,14 @@ export class MenuTabsComponent  implements OnInit {
   goHome(){
     this.navCtrl.navigateRoot(['/home']);
 
+  }
+
+  goPerfil(){
+    this.navCtrl.navigateRoot(['/perfil']);
+  }
+
+  goMensajes(){
+    this.navCtrl.navigateRoot(['/mensajes']);
   }
 
 }
