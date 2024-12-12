@@ -4,7 +4,7 @@ export interface Root2 {
   id: number
   nombre: string
   usuario: string
-  descripcion: string
+  descripcion:string
   carrera: string
   imagen: string
 }

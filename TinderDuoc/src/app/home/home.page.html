@@ -3,26 +3,24 @@
 
   <div class="container">
 
-   <div *ngIf="user">
-    <p>Bienvenido, tu correo es: <strong>{{ user }}</strong></p>
-   </div>
+ 
 
-    <!-- <button (click)="Filtrar()" class="btn-filtrarBusqueda btn btn-duoc3"><ion-icon name="filter"></ion-icon> Filtrar Búsqueda</button> -->
+    <button (click)="Filtrar()" class="btn-filtrarBusqueda btn btn-duoc3"><ion-icon name="filter"></ion-icon> Filtrar Búsqueda</button>
 
    
     <swiper-container class="cards-personas">
-      @for(data of datos; track data.id){
+      @for(user of users; track user.id){
       <swiper-slide class="slide">
         <ion-card class="full-card" style="text-align: center;">
-          <img alt="Foto de Matches" class="imagen-persona" src="{{data.imagen}}" />
+          <img alt="Foto de Matches" class="imagen-persona" src="user.photo"/>
           
           <ion-card-header>
             
-            <ion-card-subtitle class="carrera-persona">{{data.carrera}}</ion-card-subtitle>
-            <ion-card-title class="name-persona">{{data.nombre}}</ion-card-title>
+            <ion-card-subtitle class="carrera-persona">{{user.carrera}}</ion-card-subtitle>
+            <ion-card-title class="name-persona">{{user.username}}</ion-card-title>
           </ion-card-header>
           <ion-card-content class="descripcion-persona">
-            {{data.descripcion}}
+            {{user.description}}
           </ion-card-content>
           <ion-buttons class="btn-maches">
             <button class="btn btn-dislike"><ion-icon name="heart-dislike-outline"></ion-icon></button>

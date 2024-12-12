@@ -15,9 +15,6 @@ export class PerfilPage implements OnInit {
 
   cuentas: any[] = [];
   user: string | null | undefined;
-
-  nombreUsuario: string = '';
-  nombre: string = '';
   apellido: string = '';
   descripcion: string = '';
   edad: string = '';
@@ -30,8 +27,8 @@ export class PerfilPage implements OnInit {
 
   ngOnInit() {
 
-    const user = getAuth().currentUser
-    this.user = user?.displayName
+    const currentUser = getAuth().currentUser
+    this.user = currentUser?.displayName
 
     this.cuentasDuoc().subscribe(res => {
       this.cuentas = res.data;
@@ -50,8 +47,6 @@ export class PerfilPage implements OnInit {
 
       if (cuenta) {
         console.log("Usuario encontrado:", cuenta);
-        this.nombreUsuario = cuenta['USUARIO'];
-        this.nombre = cuenta['NOMBRE']
         this.apellido = cuenta['APELLIDO']
         this.descripcion = cuenta['DESCRIPCION']
         this.edad = cuenta['EDAD']

@@ -6,7 +6,7 @@
         <ion-row>
           <ion-avatar class="imagen-avatar">
             <ion-col class="div-imagen">
-              <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos.length > 0 ? photoService.photos[0].WebViewPath : 'https://ionicframework.com/docs/img/demos/avatar.svg'"  />
+              <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos.length > 0 ? photoService.photos[0].WebViewPath : 'https://ionicframework.com/docs/img/demos/avatar.svg'" />
             </ion-col>
           </ion-avatar>
         </ion-row>
@@ -17,9 +17,8 @@
       <!-- <u class="usuario">bapg</u> -->
 
       <div class="container-input">
-
         <div class="input-field">
-          <input type="text" required spellcheck="false" value="_bapg_">
+          <input type="text" required spellcheck="false" [(ngModel)]="user">
           <label>usuario</label>
         </div>
         <!-- <p class="nombre">Benjamin Gonzalez</p> -->

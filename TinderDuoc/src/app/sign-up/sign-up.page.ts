@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { updateProfile } from '@angular/fire/auth';
+import User from '../interfaces/user.interface';
 
 @Component({
   selector: 'app-sign-up',
@@ -42,11 +43,11 @@ export class SignUpPage implements OnInit {
 
 
   onSubmit() {
-    
+
     const cuentaValida = this.cuentas.find(cuenta =>
       cuenta['USUARIO'] === this.usuario || cuenta['CORREO ELECTRONICO'].toUpperCase() === this.correoElectronico.toUpperCase()
     );
-    
+
     /////////     SE VALIDA SI ALGUN CAMPO ESTA VACIO       /////////
     if (!this.usuario || !this.correoElectronico || !this.password) {
       alert('Complete todos los campos');
@@ -58,78 +59,106 @@ export class SignUpPage implements OnInit {
       this.alertaDominioInvalido();
       return;
 
-    }else if (cuentaValida) {
+    } else if (cuentaValida) {
       alert('Usuario y/o Correo electronico ya usados');
 
     }
-    
-    
+
+
     else {
       //EMAIL Y CONTRASEÑA ENVIADOS COMO OBJETO AL SERVICIO DE REGISTRO
       const { email, password } = this.formReg.value;
       this.userService.register({ email, password })
         .then(response => {
-          console.log(response)
+          const user = response.user
+          console.log('response.user: ', user)
 
-        const user= response.user
-        updateProfile(user,{
-          displayName: this.usuario
+
+          updateProfile(user, {
+
+
+            displayName: this.usuario
+
+          })
+            .then(() => {
+
+              //datos parciales para completar algunos campos
+              const userData: Partial<User> = {
+                id: user.uid,
+                name:'',
+                username: user.displayName,
+                email: user.email,
+                age: 0 ,
+                carrera:'',
+                description:'',
+                photo:'',
+                role:''
+
+              };
+
+              this.userService.addUser(userData)
+                .then(() => {
+                  console.log("Usuario agregado!")
+                })
+                .catch((error) => {
+                  console.log("Usuario no agregado!", error)
+
+                })
+
+              console.log("USUARIO ha sido agregado como", this.usuario)
+            })
+            .catch((error) => {
+              console.log("error al agregar usuario", error)
+
+            })
+
+
+          this.navCtrl.navigateRoot(['/sign-in']);
+
         })
-        .then(()=>{
-          console.log("USUARIO ha sido agregado como",this.usuario)
-        })
-        .catch((error)=>{
-          console.log("error al agregar usuario")
-
-        })
-
-
-        this.navCtrl.navigateRoot(['/sign-in']);
-
-        })
-        .catch(error => {console.log(error)});
+        .catch(error => { console.log(error) });
     }
   }
 
-async alertaDominioInvalido(){
-  const toast=await this.toastController.create({
-    message:'Correo debe pertenecer a DUOC',
-    duration:1500,
-    position:'top'
+  async alertaDominioInvalido() {
+    const toast = await this.toastController.create({
+      message: 'Correo debe pertenecer a DUOC',
+      duration: 1500,
+      position: 'top'
 
-  })
-  await toast.present();
-}
+    })
+    await toast.present();
+  }
 
-// async alertaRegistroExitoso(){
-//   const toast=await this.toastController.create({
-//     header: 'Registro Exitoso',
-//     message:'Registrado con exito!',
-//     buttons: [
-//       {
-//         text: 'Aceptar',
-//         handler: () => {
-//           // Navegar a la página de inicio de sesión al aceptar la alerta
-//           this.navCtrl.navigateRoot(['/sign-in']);
-//         }
-//       }
-//     ]
+  // async alertaRegistroExitoso(){
+  //   const toast=await this.toastController.create({
+  //     header: 'Registro Exitoso',
+  //     message:'Registrado con exito!',
+  //     buttons: [
+  //       {
+  //         text: 'Aceptar',
+  //         handler: () => {
+  //           // Navegar a la página de inicio de sesión al aceptar la alerta
+  //           this.navCtrl.navigateRoot(['/sign-in']);
+  //         }
+  //       }
+  //     ]
 
-//   })
-//   await toast.present();
-// }
+  //   })
+  //   await toast.present();
+  // }
 
 
 
 
   crearCuenta() {
-    
+
 
     console.log('Button crear cuenta')
     //this.navCtrl.navigateRoot('/home')
   }
 
-  
+
   cuentasDuoc() {
 
     return this.http

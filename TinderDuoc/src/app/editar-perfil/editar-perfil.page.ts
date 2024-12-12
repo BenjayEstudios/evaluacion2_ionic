@@ -8,13 +8,28 @@ import { UserService } from '../services/user.service';
 })
 export class EditarPerfilPage implements OnInit {
 
+  user:string|undefined|null
+
   profilePhoto: string | undefined;
-  constructor(public photoService: PhotoService
-              
+  constructor(public photoService: PhotoService,
+              private userService: UserService
   ) {
    }
 
   async ngOnInit() {
+
+     this.userService.getUser()
+     .then(user=> {
+
+      this.user=user
+
+      console.log(user)
+     }).catch(user=>{
+
+      this.user=user
+      console.log(user)
+    })
+
     
   }
 
