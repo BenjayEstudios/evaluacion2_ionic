@@ -7,12 +7,15 @@
           <img class="imagen" alt="Fotografía de perfil" [src]="photoService.photos.length > 0 ? photoService.photos[0].WebViewPath : 'https://ionicframework.com/docs/img/demos/avatar.svg'"  />
         </ion-col>
       </ion-avatar>
-      <div *ngIf="user">
+      <div *ngIf="users" >
+        <u class="usuario">{{users.username}}</u>
+        <p class="edad">{{users.age}}</p>
+        <p class="edad">{{users.name}}</p>
+        <p class="edad">{{users.carrera}}</p>
+        <p class="descripcion">{{users.email}}</p>
+        <p class="descripcion">{{users.description}}</p>
 
       </div>
-      <u class="usuario">{{user}}</u>
-      <p class="edad">{{edad}}</p>
-      <p class="descripcion">{{descripcion}}</p>
     </div>
     <ion-buttons class="btn-maches"> 
       <button (click)="EditarPerfil()" class="btn btn-duoc1">Editar Perfil</button>

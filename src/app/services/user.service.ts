@@ -3,7 +3,7 @@ import { getAuth, Auth, signOut, createUserWithEmailAndPassword, signInWithEmail
 import { Firestore, collection, addDoc, collectionData, doc } from '@angular/fire/firestore';
 import User from '../interfaces/user.interface'
 import { Observable } from 'rxjs';
-import { getDocs, query, updateDoc, where } from 'firebase/firestore';
+import { getDoc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 
 
 @Injectable({
@@ -31,7 +31,7 @@ export class UserService {
     return signInWithEmailAndPassword(this.auth, email, password)
   }
 
-  
+
 
   logout() {
     return signOut(this.auth);
@@ -56,7 +56,7 @@ export class UserService {
 
     const userRef = collection(this.firestore, 'usuarios')
     return addDoc(userRef, user)
-    
+
   }
 
 
@@ -76,27 +76,49 @@ export class UserService {
   }
 
 
+  
+
+  async getDatosUser(userID: string) {
+    const userQuery = query(collection(this.firestore, 'usuarios'),
+      where('id', '==', userID)
+    );
+
+    const querySnapshot = await getDocs(userQuery)
+    const docs = querySnapshot.docs[0]
+    return docs;
+
+  }
+
+
+
+
+
+
+
   async updateUser(userID: string, userData: Partial<User>) {
 
-    const userQuery = query(
-      collection(this.firestore, 'usuarios'),
-      where('id', '==', userID) // Busca documentos donde el campo `id` sea igual a 'xyz123'
-    );
-    const querySnapshot = await getDocs(userQuery);
-    const docs = querySnapshot.docs[0]; // Accede al primer (y único) documento
+    this.getDatosUser(userID)
+      .then((docs) => {
+        console.log(docs)
+        console.log('ID del documento:', docs.id); // ID único de Firestore
+        console.log('Datos del documento:', docs.data()); // Campos internos del documento
+        const userSelect = doc(this.firestore, 'usuarios', docs.id)
+        return updateDoc(userSelect, userData)
+          .then((response) => {
+            console.log("datos modificados ")
+          })
+          .catch(error => {
+            console.log("datos no modificados ", error)
 
-    console.log('ID del documento:', docs.id); // ID único de Firestore
-    console.log('Datos del documento:', docs.data()); // Campos internos del documento
-    const userSelect = doc(this.firestore, 'usuarios', docs.id)
-    return updateDoc(userSelect, userData)
-      .then((response) => {
-        console.log("datos modificados ")
-      })
-      .catch(error => {
-        console.log("datos no modificados ", error)
 
+          })
 
       })
+      .catch(()=>{
+        console.log('Error con getDatosUser()')
+      })
+
+
 
   }
 

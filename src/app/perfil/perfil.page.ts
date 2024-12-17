@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { PhotoService } from '../services/photo.service';
 import { UserService } from '../services/user.service';
-import { Auth, getAuth } from '@angular/fire/auth';
+import { Auth, getAuth} from '@angular/fire/auth';
+import User from '../interfaces/user.interface'
 
 @Component({
   selector: 'app-perfil',
@@ -14,24 +15,40 @@ import { Auth, getAuth } from '@angular/fire/auth';
 export class PerfilPage implements OnInit {
 
   cuentas: any[] = [];
+  userID: string|null=null
   user: string | null | undefined;
   apellido: string = '';
-  descripcion: string = '';
+  descripcion:  string | null = null;
   edad: string = '';
+  users: User|null=null
 
   constructor(
     private navCtrl: NavController,
     private http: HttpClient,
     public photoService: PhotoService,
+    private userService: UserService,
+    private auth:Auth
   ) { }
 
   ngOnInit() {
 
+    const user=this.auth.currentUser
+    const userID=user?.uid
+
+    this.userService.getDatosUser(userID??'userID')
+    .then(response=>{
+      this.users = response.data() as User
+      
+      console.log('this.users:',this.users)
+    
+
+    
+    })
  
-    this.cuentasDuoc().subscribe(res => {
-      this.cuentas = res.data;
-      this.traerNombre();
-    });
+    // this.cuentasDuoc().subscribe(res => {
+    //   this.cuentas = res.data;
+    //   // this.traerNombre();
+    // });
 
   }
 

@@ -49,15 +49,20 @@ export class SignUpPage implements OnInit {
     );
 
     /////////     SE VALIDA SI ALGUN CAMPO ESTA VACIO       /////////
-    if (!this.usuario || !this.correoElectronico || !this.password) {
+     if (!this.formReg.get('email')?.value.endsWith('@duocuc.cl')) {
+      this.alertaDominioInvalido();
+      return;
+
+    }
+    else if (!this.usuario || !this.formReg.get('email')?.value|| !this.password) {
       alert('Complete todos los campos');
       return;
     }
 
-    /////////       SE VALIDA SI EL USUARIO EXISTE          /////////
-    else if (!this.correoElectronico.endsWith('@duocuc.cl')) {
+    else if (!this.formReg.get('email')?.value.endsWith('@duocuc.cl')) {
       this.alertaDominioInvalido();
       return;
+    /////////       SE VALIDA SI EL USUARIO EXISTE          /////////
 
     } else if (cuentaValida) {
       alert('Usuario y/o Correo electronico ya usados');
@@ -74,19 +79,13 @@ export class SignUpPage implements OnInit {
           console.log('response.user: ', user)
 
 
-          updateProfile(user, {
-
-
-            displayName: this.usuario
-
-          })
-            .then(() => {
+          const usuario = this.formReg.get('user')?.value;
 
               //datos parciales para completar algunos campos
               const userData: Partial<User> = {
                 id: user.uid,
                 name:'',
-                username: user.displayName,
+                username: usuario,
                 email: user.email,
                 age: 0 ,
                 carrera:'',
@@ -105,12 +104,7 @@ export class SignUpPage implements OnInit {
 
                 })
 
-              console.log("USUARIO ha sido agregado como", this.usuario)
-            })
-            .catch((error) => {
-              console.log("error al agregar usuario", error)
-
-            })
+              
 
 
           this.navCtrl.navigateRoot(['/sign-in']);
